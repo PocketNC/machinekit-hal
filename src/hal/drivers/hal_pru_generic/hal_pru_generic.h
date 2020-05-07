@@ -1,10 +1,13 @@
 //----------------------------------------------------------------------//
 // hal_pru_generic.h                                                    //
 //                                                                      //
-// Author(s): Charles Steinkuehler                                      //
+// Author(s): Charles Steinkuehler, John Allwine                        //
 // License: GNU GPL Version 2.0 or (at your option) any later version.  //
 //                                                                      //
 // Major Changes:                                                       //
+// 2020-May    John Allwine                                             //
+//             Added support for Beaglebone AI                          //
+//             Converted to instantiable component                      //
 // 2013-May    Charles Steinkuehler                                     //
 //             Split into several files                                 //
 //             Added support for PRU task list                          //
@@ -16,6 +19,7 @@
 //                                                                      //
 // Copyright (C) 2012  Charles Steinkuehler                             //
 //                     <charles AT steinkuehler DOT net>                //
+// Copyright (C) 2020 Pocket NC Company                                 //
 //                                                                      //
 // This program is free software; you can redistribute it and/or        //
 // modify it under the terms of the GNU General Public License          //
@@ -307,8 +311,8 @@ typedef struct {
         int num_stepgens;
         int num_encoders;
         int comp_id;
-        const char *name;
-        const char *halname;
+        int inst_id;
+        char halname[10];
     } config;
 
     struct {
