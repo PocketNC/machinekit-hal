@@ -1,7 +1,7 @@
 FROM debian:bookworm
 
-ENV HTTP_PROXY=http://192.168.1.239:3142
-ENV HTTPS_PROXY=http://192.168.1.239:3142
+ENV HTTP_PROXY=
+ENV HTTPS_PROXY=
 
 RUN groupadd pocketnc -g 1000
 RUN useradd pocketnc -g 1000 -u 1000 -s /bin/bash -m
