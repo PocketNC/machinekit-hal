@@ -167,6 +167,7 @@ retCode parse_transaction_section(const int mb_tx_num)
     char *tag;
     const char *tmpstr;
     mb_tx_t *this_mb_tx;
+    int ret;
 
     if (gbl.ini_file_ptr == NULL) {
         ERR(gbl.init_dbg, "gbl.ini_file_ptr NULL pointer");
@@ -184,7 +185,10 @@ retCode parse_transaction_section(const int mb_tx_num)
         return retERR;
     }
 
-    snprintf(section, sizeof(section)-1, "TRANSACTION_%02d", mb_tx_num);
+    ret = snprintf(section, sizeof(section)-1, "TRANSACTION_%02d", mb_tx_num);
+    if(ret < 0) {
+      abort();
+    }
 
     tag = "LINK_TYPE"; //required 1st time, then optional
     tmpstr = iniFind(gbl.ini_file_ptr, tag, section);
