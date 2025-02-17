@@ -19,6 +19,12 @@
       "releaseNumber": 11
     },
     {
+      "distributionID": "Debian",
+      "distributionCodename": "Bookworm",
+      "baseImage": "debian:bookworm",
+      "releaseNumber": 12
+    },
+    {
       "distributionID": "Ubuntu",
       "distributionCodename": "Bionic",
       "baseImage": "ubuntu:bionic",
@@ -80,6 +86,10 @@
     },
     {
       "osVersionNumber": 10,
+      "architecture": "armhf"
+    },
+    {
+      "osVersionNumber": 12,
       "architecture": "armhf"
     },
     {
